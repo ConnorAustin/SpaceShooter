@@ -14,9 +14,13 @@ public class PlayerCam : MonoBehaviour
 
     void Update()
     {
-        var camPos = transform.position;
-        camPos.z = player.position.z - offset;
-
-        transform.position = camPos;
+        if (player)
+        {
+            var camPos = transform.position;
+            camPos.z = player.position.z - offset;
+            camPos.y = player.position.y;
+            transform.position = camPos;
+            transform.LookAt(player.position);
+        }
     }
 }

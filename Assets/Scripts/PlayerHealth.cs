@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour {
     public int health;
     public float invisibleTime;
     public AudioClip hurtSound;
+    public GameObject explosion;
 
     [HideInInspector]
     public bool invinsible;
@@ -20,12 +22,22 @@ public class PlayerHealth : MonoBehaviour {
     {
         if (invinsible)
             return;
+        
+            
         GetComponent<AudioSource>().PlayOneShot(hurtSound);
 
-        hurtShakeAmplitude = amount * 2;
+        hurtShakeAmplitude = 10;
         health -= amount;
         invinsible = true;
         Invoke("StopInvinsible", invisibleTime);
+        if (health <= 0)
+        {
+            Replay();
+        }
+    }
+
+    void Replay() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void StopInvinsible()
@@ -36,6 +48,6 @@ public class PlayerHealth : MonoBehaviour {
     void Update()
     {
         hurtShake = hurtShakeAmplitude * Mathf.Sin(Time.time * 42.0f);
-        hurtShakeAmplitude = Mathf.Max(0, hurtShakeAmplitude - 6.5f * Time.deltaTime);
+        hurtShakeAmplitude = Mathf.Max(0, hurtShakeAmplitude - 7.5f * Time.deltaTime);
     }
 }

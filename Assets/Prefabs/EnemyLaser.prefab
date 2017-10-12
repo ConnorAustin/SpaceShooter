@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03c89b4569bb2334dbc25e71b935908d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 69
+  speed: 40
   particle: {fileID: 1656296368823614, guid: fe00d4a7bdd8cff45bdf00e7a60a0585, type: 2}
   laserDeathSound: {fileID: 1122110772274676, guid: a3ceb362b00c1704e98d5cf1bf428012,
     type: 2}

@@ -78,11 +78,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BadBoi.cs" />
+    <Compile Include="Assets\GameOver.cs" />
+    <Compile Include="Assets\Scripts\BadBoi.cs" />
     <Compile Include="Assets\Scripts\BasicGun.cs" />
     <Compile Include="Assets\Scripts\Die.cs" />
     <Compile Include="Assets\Scripts\EnemyGun.cs" />
     <Compile Include="Assets\Scripts\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Engine.cs" />
     <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Scripts\Hurt.cs" />
@@ -93,6 +95,7 @@
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\Shield.cs" />
     <Compile Include="Assets\Scripts\Turret.cs" />
+    <Compile Include="Assets\UI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\OnTop.shader" />

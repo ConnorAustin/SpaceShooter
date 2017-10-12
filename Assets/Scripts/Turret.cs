@@ -12,14 +12,17 @@ public class Turret : MonoBehaviour {
     }
 	
 	void Update () {
-        anchor.LookAt(Player.player.transform.position);
-        if(Vector3.Distance(Player.player.transform.position, transform.position) < 100)
+        if (Player.player)
         {
-            gun.Fire();
-        }
-        else
-        {
-            gun.StopFire();
+            anchor.LookAt(Player.player.transform.position);
+            if (Vector3.Distance(Player.player.transform.position, transform.position) < 100)
+            {
+                gun.Fire();
+            }
+            else
+            {
+                gun.StopFire();
+            }
         }
 	}
 }

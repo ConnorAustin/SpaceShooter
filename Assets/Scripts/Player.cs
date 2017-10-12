@@ -18,9 +18,13 @@ public class Player : MonoBehaviour
     Rigidbody rigidBody;
     PlayerHealth health;
 
-    void Start()
+    void Awake()
     {
         player = this;
+    }
+
+    void Start()
+    {
         gun = (Gun)GetComponent<BasicGun>();
         rigidBody = GetComponent<Rigidbody>();
         health = GetComponent<PlayerHealth>();
@@ -50,8 +54,8 @@ public class Player : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         if (Mathf.Abs(h) < 0.1f && Mathf.Abs(v) < 0.1f)
         {
-            target.x = towardsZero(target.x, 2.0f * Time.deltaTime);
-            target.y = towardsZero(target.y, 2.0f * Time.deltaTime);
+            target.x = towardsZero(target.x, 1.0f * Time.deltaTime);
+            target.y = towardsZero(target.y, 1.0f * Time.deltaTime);
             targetVelocity = Vector3.Lerp(targetVelocity, Vector3.zero, 0.2f);
         }
         else
